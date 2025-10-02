@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projek Sosialisasi Kemasyarakatan - Kelompok 5 SMK Yadika Kalijati</title>
+    <style>
+        /* Import Font dari Google */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap');
+
+        /* Variabel Warna */
+        :root {
+            --color-primary: #FFC107; /* Kuning Ceria */
+            --color-secondary: #0D47A1; /* Biru Profesional */
+            --color-dark: #333333; /* Abu-abu Gelap untuk Teks */
+            --color-light: #FFFFFF; /* Putih */
+            --color-bg: #f4f7f9; /* Latar Belakang Abu-abu muda */
+        }
+
+        /* Pengaturan Dasar */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-bg);
+            color: var(--color-dark);
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--color-secondary);
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* Header & Navigasi */
+        .header {
+            background-color: var(--color-light);
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--color-secondary);
+            text-decoration: none;
+        }
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+        }
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--color-dark);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .nav-menu a:hover {
+            color: var(--color-primary);
+        }
+
+        /* Hero Section (Halaman Utama) */
+        .hero {
+            /* FOTO ANDA SUDAH SAYA MASUKKAN LANGSUNG KE DALAM KODE DI BAWAH INI */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAHgAyADASIAAhEBAxEB/8QAGwABAQADAQEBAAAAAAAAAAAAAAECAwUEBgf/xAAzEAACAgEDAwMCBQUAAgMAAAAAAQIRAwQhEjFBUQUTImFxgZEyobFCUsHR4fAUIzPhFP/EABgBAQEBAQEAAAAAAAAAAAAAAAABAgME/8QAHxEBAQEBAQACAgMBAAAAAAAAAAERAhIhAzFBURMy/9oADAMBAAIRAxEAAAD8ZgAAAAAAAAAAAAAAAB1g6gAAAAAAAB2A7AAAAAAAAAAAAAAAAAAAAAAB0dAdUAAAAAAAAAAB1dAAAAAdgOwAAAAAAAAAAAAADqDqgAAAAAAAAAAADsAAAAAAAAAA6g6oAAAAAAAAAAADsB2AAAAAAAAAAAAAAAAdgAAAAAAAAAAAAAAAAAAAAAAAAAdAdUAAAAAAAAAAdgAAAAADqAAAAADsB2AAAAAB0B1QAAAAAAAAAAdQdAAAAAdAAAAAdgOx0dAAAAAAAAAAAAAAAAAdAdUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdQdAAAAAAAAAAAAAAAAAAAAAAAAdAdUAAAAAAAAAAAdQdAAAAAAAAAAAAAAAAAAAAdAdUAAAAAAAAAAAAAAAAAAAAdQdQAAAAAAAAAAAAAAdAdUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHUHUAAAAADoAAAAAAAAAAAAAAAdQdQAAAAAAAAAAAADoAAAAADqAAAA6g6oAAAAAAAAAAAAAAAAAAAAAAOgOqAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADqDqAAAAAAAAAAAAAAAAAAAAAAAAA6A6oAAAAA6A6AAAAAAAAADoAAAAAAAADqDqgAAAAAAAAAAAAAAADoDqgAAAAAAAAAAAAAAAAAAAAAAAAAAAA6g6oAAAAAAAAAAADsAAAAAAAAAA6g6oAAAAAAAAAAADsB2AAAAAAAAAAAAAAAAdgAAAAAAAAAAAAAAAAAAAAAAAAAdAdUAAAAAAAAAAdgAAAAADqAAAAADsB2AAAAAB0B1QAAAAAAAAAAdQdAAAAAdAAAAAdgOx0dAAAAAAAAAAAAAAAAAdAdUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdQdAAAAAAAAAAAAAAAAAAAAAAAAdAdUAAAAAAAAAAAdQdAAAAAAAAAAAAAAAAAAAAdAdUAAAAAAAAAAAAAAAAAAAAdQdQAAAAAAAAAAAAAAdAdUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHUHUAAAAADoAAAAAAAAAAAAAAAdQdQAAAAAAAAAAAADoAAAAADqAAAA6g6oAAAAAAAAAAAAAAAAAAAAAAOgOqAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADqDqAAAAAAAAAAAAAAAAAAAAAAAAA6A6oAAAAA6A6AAAAAAAAADoAAAAAAAADqDqgAAAAAAAAAAAAAAADoDqgAAAAAAAAAAAAAAAAAAAAAAAAAAAADqDqgAAAAAAAAAAADsAAAAAAAAAA6g6oAAAAAAAAAAADsB2AAAAAAAAAAAAAAAAdgAAAAAAAAAAAAAAAAAAAAAAAAAdAdUAAAAAAAAAAdgAAAAADqAAAAADsB2AAAAAB0B1QAAAAAAAAAAdQdAAAAAdAAAAAdgOx0dAAAAAAAAAAAAAAAAAdAdUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdQdAAAAAAAAAAAAAAAAAAAAAAAAdAdUAAAAAAAAAAAdQdAAAAAAAAAAAAAAAAAAAAdAdUAAAAAAAAAAAAAAAAAAAAdQdQAAAAAAAAAAAAAAdAdUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHUHUAAAAADoAAAAAAAAAAAAAAAdQdQAAAAAAAAAAAADoAAAAADqAAAA6g6oAAAAAAAAAAAAAAAAAAAAAAOgOqAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADqDqgAAAAAAAAAAAAAAADqDqgAAAAAAAAAAAAAAAADqAAAAAA6g6oAAAAAAAAAAADqAAAAAAAAAAADqDqgAAAAAAAAAADqDqgAAAAAAAAADqDqgAAAAAAAAAAAAADqAAAAAAAAAA6A6oAAAAAAAAAAAAAA6A6oAAAAAAAAAADqAAAAAAAAAA6A6oAAAAAAAAADoDqgAAAAADqAAAAAAAA6A6oAAAAAAAAAAAAAAADqDqgAAAAAAADqAAAAAAAAAAAAAAOgOqAAAAAAAAAA6A6oAAAAAAAADqAAAAAAAAAAAAAADqDqgAAADoAAAAAA6A6oAAAAAAAAAAAAADqAAAAAAADoDqgAAADoAAAAAADqAAAAADqDqgAAAAAAAAAAAAAAAAAAAAAAADqAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//Z);
+            background-size: cover;
+            background-position: center 70%;
+            color: var(--color-light);
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: var(--color-light);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+        .hero p {
+            font-size: 1.2em;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+        }
+        .btn {
+            background-color: var(--color-primary);
+            color: var(--color-dark);
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Bagian Konten Umum */
+        .content-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+        .content-section:nth-child(odd) {
+            background-color: var(--color-light);
+        }
+        .content-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
+        .content-section h2::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 4px;
+            background-color: var(--color-primary);
+            bottom: -10px;
+            left: 20%;
+        }
+
+        /* Halaman Tentang */
+        .about-content {
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        .about-content ul {
+            list-style-type: '✔ ';
+            padding-left: 20px;
+        }
+
+        /* Halaman Tim */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .team-card {
+            background-color: var(--color-light);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: center;
+            padding: 30px 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+        .team-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--color-primary);
+        }
+        .team-card h4 {
+            margin: 15px 0 5px 0;
+            color: var(--color-secondary);
+            font-size: 1.2em;
+        }
+        .team-card p {
+            color: #777;
+            margin: 0;
+            font-weight: 600;
+        }
+        .advisor-card {
+            grid-column: 1 / -1; /* Pembina akan mengambil lebar penuh */
+            background-color: var(--color-secondary);
+            color: var(--color-light);
+        }
+        .advisor-card h4, .advisor-card p {
+            color: var(--color-light);
+        }
+        .advisor-card img {
+            border-color: var(--color-light);
+        }
+
+        /* Galeri */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        .gallery-item {
+             overflow: hidden;
+             border-radius: 8px;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.4s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--color-secondary);
+            color: var(--color-light);
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container navbar">
+            <a href="#beranda" class="nav-logo">SMK Yadika Kalijati</a>
+            <ul class="nav-menu">
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#tim">Tim Kami</a></li>
+                <li><a href="#galeri">Galeri</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section id="beranda" class="hero">
+            <h1>PROJEK SOSIALISASI KEMASYARAKATAN</h1>
+            <p>Sebuah Inisiatif dari Kelompok 5 Kelas XII untuk Meningkatkan Kepedulian Sosial, Memperkuat Kerjasama Tim, serta Memberikan Manfaat Nyata bagi Masyarakat.</p>
+            <a href="#galeri" class="btn">Lihat Kegiatan Kami</a>
+        </section>
+
+        <section id="tentang" class="content-section">
+            <div class="container">
+                <h2>Tentang Proyek Kami</h2>
+                <div class="about-content">
+                    <h3>Latar Belakang</h3>
+                    <p>Projek Sosialisasi Kemasyarakatan ini merupakan bagian integral dari Ujian Sekolah untuk siswa kelas XII di SMK Yadika Kalijati. Program ini dirancang bukan hanya sebagai pemenuhan syarat akademis, tetapi sebagai wadah bagi kami untuk terjun langsung ke masyarakat. Kami belajar mengidentifikasi masalah, merancang solusi, dan berinteraksi secara nyata untuk memberikan kontribusi positif.</p>
+
+                    <h3>Visi & Misi</h3>
+                    <p><strong>Visi:</strong> Terwujudnya generasi muda yang peduli, kritis, dan mampu beraksi nyata untuk kemajuan lingkungan sekitarnya.</p>
+                    <p><strong>Misi:</strong></p>
+                    <ul>
+                        <li>Melaksanakan kegiatan sosialisasi yang edukatif dan relevan dengan kebutuhan masyarakat.</li>
+                        <li>Meningkatkan kemampuan kerja sama tim, komunikasi, dan kepemimpinan di antara anggota kelompok.</li>
+                        <li>Membangun citra positif sekolah sebagai institusi yang unggul dalam pengabdian masyarakat.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="tim" class="content-section">
+            <div class="container">
+                <h2>Inilah Kami, Kelompok 5!</h2>
+                <div class="team-grid">
+                    <div class="team-card advisor-card">
+                        <img src="https://placehold.co/120x120/FFFFFF/0D47A1?text=DNA" alt="Foto Pembina">
+                        <h4>Dhina Nur Amelia</h4>
+                        <p>Pembina</p>
+                    </div>
+                    <div class="team-card"><img src="https://placehold.co/120x120/FFC107/333333?text=BA" alt="Foto Bagas"><h4>Bagas Alvarizi</h4><p>Anggota</p></div>
+                    <div class="team-card"><img src="https://placehold.co/120x120/FFC107/333333?text=MA" alt="Foto Meri"><h4>Meri Ariyani</h4><p>Anggota</p></div>
+                    <div class="team-card"><img src="https://placehold.co/120x120/FFC107/333333?text=K" alt="Foto Kusbini"><h4>Kusbini</h4><p>Anggota</p></div>
+                    <div class="team-card"><img src="https://placehold.co/120x120/FFC107/333333?text=DM" alt="Foto Dewi"><h4>Dewi Maharani</h4><p>Anggota</p></div>
+                    <div class="team-card"><img src="https://placehold.co/120x120/FFC107/333333?text=RR" alt="Foto Regitha"><h4>Regitha Ranggadina</h4><p>Anggota</p></div>
+                    <div class="team-card"><img src="https://placehold.co/120x120/FFC107/333333?text=SH" alt="Foto Salsabila"><h4>Salsabila Harini</h4><p>Anggota</p></div>
+                    <div class="team-card"><img src="https://placehold.co/120x120/FFC107/333333?text=VD" alt="Foto Vicke"><h4>Vicke Dwiyanti</h4><p>Anggota</p></div>
+                    <div class="team-card"><img src="https://placehold.co/120x120/FFC107/333333?text=MF" alt="Foto Muhamad"><h4>Muhamad Fadilah Fasha</h4><p>Anggota</p></div>
+                    <div class="team-card"><img src="https://placehold.co/120x120/FFC107/333333?text=NS" alt="Foto Neng"><h4>Neng Silvia Putri Rahayu</h4><p>Anggota</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeri" class="content-section">
+            <div class="container">
+                <h2>Galeri Proyek Kami</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item"><img src="https://placehold.co/600x400/0D47A1/FFFFFF?text=Foto+Kegiatan+1" alt="Kegiatan 1"></div>
+                    <div class="gallery-item"><img src="https://placehold.co/600x400/FFC107/333333?text=Foto+Kegiatan+2" alt="Kegiatan 2"></div>
+                    <div class="gallery-item"><img src="https://placehold.co/600x400/cccccc/333333?text=Foto+Kegiatan+3" alt="Kegiatan 3"></div>
+                    <div class="gallery-item"><img src="https://placehold.co/600x400/FFC107/333333?text=Foto+Kegiatan+4" alt="Kegiatan 4"></div>
+                    <div class="gallery-item"><img src="https://placehold.co/600x400/cccccc/333333?text=Foto+Kegiatan+5" alt="Kegiatan 5"></div>
+                    <div class="gallery-item"><img src="https://placehold.co/600x400/0D47A1/FFFFFF?text=Foto+Kegiatan+6" alt="Kegiatan 6"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Kelompok 5 - XII | Projek Sosialisasi Kemasyarakatan | SMK Yadika Kalijati</p>
+        </div>
+    </footer>
+
+</body>
+      </html>
